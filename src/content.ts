@@ -66,7 +66,7 @@ export const PROJECTS: Project[] = [
     title: 'Pharaohs Wear',
     category: 'AI Fashion Film',
     year: '2026',
-    src: '/videos/Pharachs-Wear.mp4',
+    src: '/videos/Pharaohs-Wear.mp4,
   },
 ]
 
