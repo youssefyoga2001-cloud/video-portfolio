@@ -29,7 +29,7 @@ export const PROJECTS: Project[] = [
     title: 'O3 Sigma',
     category: 'Generative Film',
     year: '2026',
-    src: '/videos/o3-sigma.mp4',
+    src: '/videos/O3-Sigma.mp4',
     posterAt: 0.6,
   },
   {
@@ -37,7 +37,7 @@ export const PROJECTS: Project[] = [
     title: 'Kowens',
     category: 'AI Commercial',
     year: '2026',
-    src: '/videos/kowens.mp4',
+    src: '/videos/Kowens.mp4',
     posterAt: 0.6,
   },
   {
@@ -45,28 +45,28 @@ export const PROJECTS: Project[] = [
     title: 'Zeina Story',
     category: 'AI Narrative',
     year: '2026',
-    src: '/videos/zeina-story.mp4',
+    src: '/videos/Zeina-Story.mp4',
   },
   {
     id: 'bullshead',
     title: 'Bullshead',
     category: 'Product Film',
     year: '2026',
-    src: '/videos/bullshead.mp4',
+    src: '/videos/Bullshead.mp4',
   },
   {
     id: 'barraq',
     title: 'Barraq',
     category: 'Brand Campaign',
     year: '2026',
-    src: '/videos/barraq.mp4',
+    src: '/videos/Barraq.mp4',
   },
   {
     id: 'pharaohs-wear',
     title: 'Pharaohs Wear',
     category: 'AI Fashion Film',
     year: '2026',
-    src: '/videos/pharaohs-wear.mp4',
+    src: '/videos/Pharachs-Wear.mp4',
   },
 ]
 
