@@ -44,18 +44,20 @@ export function Hero() {
   return (
     <>
       <video
-  ref={videoRef}
-  src="/videos/Hero.mp4"
-  muted
-  playsInline
-  preload="auto"
-  aria-hidden="true"
-  className="fixed inset-0 z-0 h-full w-full object-cover object-[50%_center] md:object-[70%_center]"
-/>
+        ref={videoRef}
+        src="/videos/Hero.mp4"
+        muted
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+        className="fixed inset-0 z-0 h-full w-full object-cover object-[50%_center] md:object-[70%_center]"
+      />
+
       <div
         aria-hidden="true"
         className="fixed inset-0 z-0 bg-gradient-to-r from-black/90 via-black/55 to-black/20"
       />
+
       <div
         aria-hidden="true"
         className="fixed inset-x-0 bottom-0 z-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent"
@@ -125,10 +127,13 @@ export function Hero() {
             >
               <span>
                 Reach us:{' '}
-                <span className="underline underline-offset-1">{SITE.email}</span>
+                <span className="underline underline-offset-1">
+                  {SITE.email}
+                </span>
               </span>
               <CopyIcon />
             </button>
+
             <span role="status" className="sr-only">
               {copied ? 'Email address copied to clipboard' : ''}
             </span>
