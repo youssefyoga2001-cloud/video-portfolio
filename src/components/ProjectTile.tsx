@@ -3,8 +3,6 @@ import { useRef, useState } from 'react'
 import type { Project } from '../content'
 import { useMediaQuery } from '../hooks/useMediaQuery'
 
-const DEFAULT_POSTER_AT = 0.3
-
 export function ProjectTile({
   project,
   index,
@@ -17,18 +15,11 @@ export function ProjectTile({
   const videoRef = useRef<HTMLVideoElement>(null)
   const hasFinePointer = useMediaQuery('(pointer: fine)')
   const [playing, setPlaying] = useState(false)
-  const [ready, setReady] = useState(false)
-
-  // No build-time poster images, so seek to a representative frame to paint one.
-  const seekToPoster = () => {
-    const video = videoRef.current
-    if (!video || !Number.isFinite(video.duration)) return
-    video.currentTime = video.duration * (project.posterAt ?? DEFAULT_POSTER_AT)
-  }
 
   const start = () => {
     const video = videoRef.current
     if (!video) return
+
     video
       .play()
       .then(() => setPlaying(true))
@@ -38,9 +29,11 @@ export function ProjectTile({
   const stop = () => {
     const video = videoRef.current
     if (!video) return
+
     video.pause()
     setPlaying(false)
-    seekToPoster()
+
+    video.currentTime = 0
   }
 
   return (
@@ -65,12 +58,8 @@ export function ProjectTile({
             muted
             loop
             playsInline
-            preload="metadata"
-            onLoadedMetadata={seekToPoster}
-            onSeeked={() => setReady(true)}
-            className={`h-full w-full object-cover transition-[transform,opacity] duration-500 group-hover:scale-[1.03] ${
-              ready ? 'opacity-100' : 'opacity-0'
-            }`}
+            preload="auto"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
         </div>
 
@@ -106,11 +95,15 @@ export function ProjectTile({
         >
           {project.title}
         </h3>
+
         <span className="shrink-0 text-[13px] tabular-nums text-white/50 sm:text-[15px]">
           {project.year}
         </span>
       </div>
-      <p className="mt-1 text-[14px] text-white/60 sm:text-[16px]">{project.category}</p>
+
+      <p className="mt-1 text-[14px] text-white/60 sm:text-[16px]">
+        {project.category}
+      </p>
     </article>
   )
 }
