@@ -19,7 +19,6 @@ export type Project = {
   category: string
   year: string
   src: string
-  /** Where in the clip to grab the still frame, 0-1. Tune per video. */
   posterAt?: number
 }
 
@@ -66,7 +65,7 @@ export const PROJECTS: Project[] = [
     title: 'Pharaohs Wear',
     category: 'AI Fashion Film',
     year: '2026',
-    src: '/videos/Pharaohs-Wear.mp4,
+    src: '/videos/Pharaohs-Wear.mp4',
   },
 ]
 
