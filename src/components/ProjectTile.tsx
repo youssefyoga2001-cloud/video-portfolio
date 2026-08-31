@@ -32,7 +32,6 @@ export function ProjectTile({
 
     video.pause()
     setPlaying(false)
-
     video.currentTime = 0
   }
 
