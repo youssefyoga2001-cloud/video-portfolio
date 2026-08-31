@@ -44,14 +44,14 @@ export function Hero() {
   return (
     <>
       <video
-        ref={videoRef}
-        src="/videos/hero.mp4"
-        muted
-        playsInline
-        preload="auto"
-        aria-hidden="true"
-        className="fixed inset-0 z-0 h-full w-full object-cover object-[50%_center] md:object-[70%_center]"
-      />
+  ref={videoRef}
+  src="/videos/Hero.mp4"
+  muted
+  playsInline
+  preload="auto"
+  aria-hidden="true"
+  className="fixed inset-0 z-0 h-full w-full object-cover object-[50%_center] md:object-[70%_center]"
+/>
       <div
         aria-hidden="true"
         className="fixed inset-0 z-0 bg-gradient-to-r from-black/90 via-black/55 to-black/20"
